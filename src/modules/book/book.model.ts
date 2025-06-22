@@ -5,7 +5,7 @@ const bookSchema = new Schema<IBook, BookStaticMethod>(
   {
     title: {
       type: String,
-      required: [true, "Title is Required"],
+      required: [true, "Title Required"],
       trim: true,
     },
     author: { type: String, required: true, min: 3, max: 100, trim: true },
