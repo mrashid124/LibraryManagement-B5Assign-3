@@ -3,6 +3,8 @@ import cors from "cors";
 import mongoose from "mongoose";
 // import { config } from "dotenv";
 import config  from "./config";
+import routes from "./routes/routes";
+
 
 
 
@@ -18,6 +20,8 @@ const PORT = process.env.PORT;
 app.get("/", (req, res)=>{
     res.send({success: true, message: " Welcome to Database server."});
 })
+
+app.use(routes);
 
 app.listen(config.port, ()=>{
     console.log(`Server is running on port ${PORT}`);
