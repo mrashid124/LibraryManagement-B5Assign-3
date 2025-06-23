@@ -4,9 +4,9 @@ import borrowRoutes from "../modules/borrow/borrow.routes";
 
 const routes = Router();
 
-routes.use("/books", bookRoutes);
+routes.use("/api/books", bookRoutes);
 
-routes.use("/borrow", borrowRoutes);
+routes.use("/api/borrow", borrowRoutes);
 
 
 

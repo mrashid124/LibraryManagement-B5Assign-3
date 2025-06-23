@@ -5,7 +5,7 @@ const bookSchema = new Schema<IBook, BookStaticMethod>(
   {
     title: {
       type: String,
-      required: [true, "Title Required"],
+      required: [true, "Title MU Required"],
       trim: true,
     },
     author: { type: String, required: true, min: 3, max: 100, trim: true },
@@ -48,14 +48,14 @@ bookSchema.pre("validate", function (next) {
     "FANTASY",
   ];
 
-  if (this.genre) {
-    this.genre = this.genre.toUpperCase(); 
+//   if (this.genre) {
+//     this.genre = this.genre.toUpperCase(); 
 
-    if (!allowedGenres.includes(this.genre)) {
-      const error = new Error(`${this.genre} is not a valid genre`);
-      return next(error);
-    }
-  }
+//     if (!allowedGenres.includes(this.genre)) {
+//       const error = new Error(`${this.genre} is not a valid genre`);
+//       return next(error);
+//     }
+//   }
 
   next();
 });
