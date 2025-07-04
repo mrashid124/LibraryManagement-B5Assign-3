@@ -2,10 +2,12 @@ import express, { Application, NextFunction, Request, Response } from "express";
 import bookRoutes from "../modules/book/book.routes";
 import borrowRoutes from "../modules/borrow/borrow.routes";
 import { connectDB } from "../connectDB/connectDB";
-
+import cors from 'cors';
 
 const app: Application = express();
-
+// Added for Assign-4======
+app.use(cors());
+// =============
 
 app.use(express.json());
 
